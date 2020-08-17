@@ -7,7 +7,7 @@ that runs the visit-counter
   And - Server restores the information
   When - Server fails
   And - Server restores
-  Then - Lost information is recovered
+  Then - Lost information recovers
   And - it starts counting again
 
 Scenario: Reconcile counts if the sensor is offline for a while
