@@ -8,6 +8,6 @@ Scenario: Report visitor trends during a week of operation
 
 Scenario: Alert when seating capacity is full
 
-  Given 
-  When 
-  Then 
+  Given
+  When
+  Then
