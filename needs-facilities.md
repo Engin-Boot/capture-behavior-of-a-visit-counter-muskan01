@@ -8,6 +8,9 @@ Scenario: Report visitor trends during a week of operation
 
 Scenario: Alert when seating capacity is full
 
-  Given
-  When
-  Then
+  Given - Hospital is working
+  And - it has n seats
+  When - an entry card issues to visitor
+  And - if current entry cards issues minus visitors exit
+  is equal to n
+  Then - Alert the staff about seating capacity
