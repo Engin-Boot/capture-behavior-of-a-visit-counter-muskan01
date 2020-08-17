@@ -3,7 +3,7 @@
 Scenario: Recover across restarts of the server
 that runs the visit-counter
 
-  Given - Hospital is working 
+  Given - Hospital is working
   And - Server restores the information
   When - Server fails
   And - Server restores
