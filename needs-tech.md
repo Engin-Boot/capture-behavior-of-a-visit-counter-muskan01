@@ -3,17 +3,14 @@
 Scenario: Recover across restarts of the server
 that runs the visit-counter
 
-  Given - Hospital is working
-  And - Server restores the information
-  When - Server fails
-  And - Server restores
-  Then - Lost information recovers
-  And - it starts counting again
+  Given - visitor counting Server is synchronised with cloud 
+  When - visitor counting system fails
+  And - Visitor count is manual until the system recover
+  Then - Lost information recovers from cloud and update with manual count
 
 Scenario: Reconcile counts if the sensor is offline for a while
 
-  Given - Hospital is working
-  And - Sensor at the entrance counts visitor
+  Given -  visitor counting Server is synchronised with cloud
   When - Sensor goes offline for a while
   And - if there is a visitor, the entry goes in a register
-  Then - restart the counting with updated numbers
+  Then - restart the counting with updated numbers from register
