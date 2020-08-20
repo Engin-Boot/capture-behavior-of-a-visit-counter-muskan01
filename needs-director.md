@@ -2,16 +2,17 @@
 
 Scenario: Show patient visits during working days and holidays
 
-  Given - Hospital is working
-  And - There are two separate registers for working days and holidays
-  When - Patient admits in hospital
-  Then - Make entry in the respective register
+  Given - There is a system for ID allotment and report generation
+  When - Patient visits the hospital
+  And - ID issues to the patient
+  And - ID allotment system is updated
+  Then - report is generated according to the ID allotment system
 
 Scenario: Compute parking slots to reserve for visiting specialists
 
-  Given - Hospital is working and has parking
+  Given - Specialist's visit is scheduled
+  And - there are sensors which tells the no. of empty slots
+  And - there are three spots reserved for specialist's vehicle
   When - A vehicle enters
-  And - checks if it is a specialist's vehicle or not
-  And - if there are more than 3 free slots
-  Then - give one slot to the vehicle (!specialists)
-  And - give one of the three  reserved spot to specialist
+  And - it is a specialist's vehicle
+  Then - give one of the three reserved spot to specialist
