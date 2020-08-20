@@ -2,9 +2,11 @@
 
 Scenario: Report visitor trends during a week of operation
 
-  Given - Hospital is working
+  Given - There is a entry card allotment system with report generation system
   When - a visitor enters a hospital
-  Then - entry card issues for the time he/she is there
+  And - entry card issues to the visitor
+  And - Entry card allotment system is updated
+  Then - Report generates according to the entry card allotment system
 
 Scenario: Alert when seating capacity is full
 
