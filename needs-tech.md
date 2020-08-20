@@ -3,7 +3,7 @@
 Scenario: Recover across restarts of the server
 that runs the visit-counter
 
-  Given - visitor counting Server is synchronised with cloud 
+  Given - visitor counting Server is synchronised with cloud
   When - visitor counting system fails
   And - Visitor count is manual until the system recover
   Then - Lost information recovers from cloud and update with manual count
